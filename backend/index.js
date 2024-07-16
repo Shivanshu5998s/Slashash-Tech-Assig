@@ -22,7 +22,7 @@ const pool = mysql.createPool({
 });
 
 // Route to handle adding a joke to favorites
-app.post('/', async (req, res) => {
+app.post('/favourites', async (req, res) => {
   const { id, joke } = req.body;
   try {
     const connection = await pool.promise().getConnection();

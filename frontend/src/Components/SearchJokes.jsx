@@ -17,7 +17,7 @@ const SearchJokes = () => {
 
   const favouriteJoke = async (id, joke) => {
     try {
-      const response = await axios.post('/', { id, joke });
+      const response = await axios.post('http://localhost:5000/favourites', { id, joke });
       console.log('Response:', response.data);
   
       setFavourites(prevFavourites => [...prevFavourites, { id, joke }]);
